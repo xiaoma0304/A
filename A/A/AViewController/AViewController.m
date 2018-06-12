@@ -7,8 +7,8 @@
 //
 
 #import "AViewController.h"
-#import "BViewController.h"
-#import <HandyFrame/UIView+LayoutMethods.h>
+//#import "BViewController.h"
+//#import <HandyFrame/UIView+LayoutMethods.h>
 
 @interface AViewController ()
 
@@ -23,34 +23,34 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:self.pushBViewControllerButton];
+//    [self.view addSubview:self.pushBViewControllerButton];
 }
 
-- (void)viewWillLayoutSubviews
-{
-    [super viewWillLayoutSubviews];
-
-    [self.pushBViewControllerButton sizeToFit];
-    [self.pushBViewControllerButton centerEqualToView:self.view];
-}
-
-#pragma mark - event response
-- (void)didTappedPushBViewControllerButton:(UIButton *)button
-{
-    BViewController *viewController = [[BViewController alloc] initWithContentText:@"hello, world!"];
-    [self.navigationController pushViewController:viewController animated:YES];
-}
-
-#pragma mark - getters and setters
-- (UIButton *)pushBViewControllerButton
-{
-    if (_pushBViewControllerButton == nil) {
-        _pushBViewControllerButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_pushBViewControllerButton setTitle:@"push B view controller" forState:UIControlStateNormal];
-        [_pushBViewControllerButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        [_pushBViewControllerButton addTarget:self action:@selector(didTappedPushBViewControllerButton:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _pushBViewControllerButton;
-}
+//- (void)viewWillLayoutSubviews
+//{
+//    [super viewWillLayoutSubviews];
+//
+//    [self.pushBViewControllerButton sizeToFit];
+//    [self.pushBViewControllerButton centerEqualToView:self.view];
+//}
+//
+//#pragma mark - event response
+//- (void)didTappedPushBViewControllerButton:(UIButton *)button
+//{
+//    BViewController *viewController = [[BViewController alloc] initWithContentText:@"hello, world!"];
+//    [self.navigationController pushViewController:viewController animated:YES];
+//}
+//
+//#pragma mark - getters and setters
+//- (UIButton *)pushBViewControllerButton
+//{
+//    if (_pushBViewControllerButton == nil) {
+//        _pushBViewControllerButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        [_pushBViewControllerButton setTitle:@"push B view controller" forState:UIControlStateNormal];
+//        [_pushBViewControllerButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+//        [_pushBViewControllerButton addTarget:self action:@selector(didTappedPushBViewControllerButton:) forControlEvents:UIControlEventTouchUpInside];
+//    }
+//    return _pushBViewControllerButton;
+//}
 
 @end

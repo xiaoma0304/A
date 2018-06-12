@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03DA0601E3510977CD14A56E /* libPods-A.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F7C233F4C0AB21558870146 /* libPods-A.a */; };
 		F85CF56620CFCF6F00A38501 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F85CF56520CFCF6F00A38501 /* AppDelegate.m */; };
 		F85CF56920CFCF6F00A38501 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F85CF56820CFCF6F00A38501 /* ViewController.m */; };
 		F85CF56C20CFCF6F00A38501 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F85CF56A20CFCF6F00A38501 /* Main.storyboard */; };
@@ -35,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C5E3DB30303B40A04D1FDFA /* Pods-A.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A.debug.xcconfig"; path = "Pods/Target Support Files/Pods-A/Pods-A.debug.xcconfig"; sourceTree = "<group>"; };
+		8C78C639DB6121C066A90EB1 /* Pods-A.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A.release.xcconfig"; path = "Pods/Target Support Files/Pods-A/Pods-A.release.xcconfig"; sourceTree = "<group>"; };
+		8F7C233F4C0AB21558870146 /* libPods-A.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-A.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F85CF56120CFCF6F00A38501 /* A.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = A.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F85CF56420CFCF6F00A38501 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F85CF56520CFCF6F00A38501 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03DA0601E3510977CD14A56E /* libPods-A.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39748CBB5920384AC29215F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F7C233F4C0AB21558870146 /* libPods-A.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CDF5CEF8C26B2DAB9AB04DCF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C5E3DB30303B40A04D1FDFA /* Pods-A.debug.xcconfig */,
+				8C78C639DB6121C066A90EB1 /* Pods-A.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F85CF55820CFCF6F00A38501 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +107,8 @@
 				F85CF57C20CFCF7100A38501 /* ATests */,
 				F85CF58720CFCF7100A38501 /* AUITests */,
 				F85CF56220CFCF6F00A38501 /* Products */,
+				CDF5CEF8C26B2DAB9AB04DCF /* Pods */,
+				39748CBB5920384AC29215F3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +163,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F85CF58D20CFCF7100A38501 /* Build configuration list for PBXNativeTarget "A" */;
 			buildPhases = (
+				D16FB2AB349E6D37EBAC2800 /* [CP] Check Pods Manifest.lock */,
 				F85CF55D20CFCF6F00A38501 /* Sources */,
 				F85CF55E20CFCF6F00A38501 /* Frameworks */,
 				F85CF55F20CFCF6F00A38501 /* Resources */,
@@ -256,6 +281,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D16FB2AB349E6D37EBAC2800 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-A-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F85CF55D20CFCF6F00A38501 /* Sources */ = {
@@ -431,15 +477,13 @@
 		};
 		F85CF58E20CFCF7100A38501 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C5E3DB30303B40A04D1FDFA /* Pods-A.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XZ966B9UK5;
 				INFOPLIST_FILE = A/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LJ.A;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -448,15 +492,13 @@
 		};
 		F85CF58F20CFCF7100A38501 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C78C639DB6121C066A90EB1 /* Pods-A.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XZ966B9UK5;
 				INFOPLIST_FILE = A/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LJ.A;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -470,11 +512,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XZ966B9UK5;
 				INFOPLIST_FILE = ATests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LJ.ATests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -489,11 +527,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XZ966B9UK5;
 				INFOPLIST_FILE = ATests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LJ.ATests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -507,11 +541,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XZ966B9UK5;
 				INFOPLIST_FILE = AUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LJ.AUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -525,11 +555,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XZ966B9UK5;
 				INFOPLIST_FILE = AUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LJ.AUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
